@@ -42,7 +42,7 @@ const ThingDetail = () => {
   return (
     <div className={styles.wrapper}>
       <p>
-        <strong>Name:</strong> <em>{thing.name}</em>
+        <strong>Name:</strong> <em>{thing.treasure_name}</em>
       </p>
       <p>
         <strong>Description:</strong> <em>{thing.description}</em>

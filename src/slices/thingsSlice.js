@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import apiService from "../services/apiService";
 
-export const fetchThings = createAsyncThunk("things/fetchThings", async () => {
-  const response = await apiService("things", { method: "GET" });
+export const fetchThings = createAsyncThunk("thing/fetchThing", async () => {
+  const response = await apiService("treasures", { method: "GET" });
   return response;
 });
 
@@ -27,7 +27,7 @@ export const fetchMyThings = createAsyncThunk(
 );
 
 export const fetchThing = createAsyncThunk("things/fetchThing", async (id) => {
-  return await apiService(`things/${id}`, { method: "GET" });
+  return await apiService(`treasures/${id}`, { method: "GET" });
 });
 
 export const addThing = createAsyncThunk(
