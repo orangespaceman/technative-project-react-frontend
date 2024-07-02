@@ -27,7 +27,7 @@ const ThingsList = () => {
         {things.map((thing) => (
           <li className={styles.item} key={thing.id}>
             <NavLink className={styles.link} to={`/things/${thing.id}/`}>
-              {thing.name}
+              {thing.treasure_name}
             </NavLink>
           </li>
         ))}
