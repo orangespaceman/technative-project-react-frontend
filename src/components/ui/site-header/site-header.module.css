@@ -1,29 +1,70 @@
 .wrapper {
-  padding: 1rem;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  background: grey;
+	padding: 1rem;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	color: white;
+	background: rgb(01, 150, 190);
+}
+
+.logo {
+	width: 50%;
+	height: auto;
+	border-radius: 50%;
+	margin: 0 5% 0 0;
 }
 
 .title {
-  margin: 5px 0 0 0;
+	display: flex;
+	flex-direction: column;
+	margin: 5px 0 0 0;
+	text-align: center;
+	max-width: 9ch;
+	margin: 0 auto;
 }
 
 .links {
+	display: flex;
+	margin-left: 10%;
+	font-size: 18px;
+	text-align: center;
 }
 
 .activeLink,
 .inactiveLink {
-  padding: 8px;
+	padding: 8px;
 }
 
 .activeLink {
-  color: #fff;
+	color: #fff;
+	font-weight: bolder;
+	text-decoration: none;
 }
 
 .inactiveLink {
-  color: #ddd;
+	color: #fff;
+}
+
+.logoutbutton {
+	font-size: 16px;
+	background-color: #fff;
+	color: rgb(01, 150, 190);
+	padding: 0 5px;
+	margin: 10px;
+	border-top: none;
+	border-left: none;
+	border-radius: 5px;
+	box-shadow: rgb(241, 48, 167, 0.16) 0px 1px 4px;
+}
+
+.logoutbutton:hover {
+	background-color: #e9e5e5;
+	color: rgb(5, 116, 146);
+	cursor: pointer;
+}
+
+.logoutbutton:active {
+	border-bottom: none;
+	border-right: none;
 }
