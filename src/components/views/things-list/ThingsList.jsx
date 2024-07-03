@@ -16,7 +16,7 @@ const ThingsList = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(setBreadcrumb([{ label: "Home", url: "/" }, { label: "Things" }]));
+    dispatch(setBreadcrumb([{ label: "Home", url: "/" }, { label: "Treasures" }]));
   }, [dispatch]);
 
   return (
@@ -26,7 +26,7 @@ const ThingsList = () => {
       <ul className={styles.list}>
         {things.map((thing) => (
           <li className={styles.item} key={thing.id}>
-            <NavLink className={styles.link} to={`/things/${thing.id}/`}>
+            <NavLink className={styles.link} to={`/treasures/${thing.id}/`}>
               {thing.treasure_name}
             </NavLink>
           </li>

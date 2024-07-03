@@ -11,6 +11,7 @@ import DeleteThing from "./components/views/delete-thing/DeleteThing";
 import UsersList from "./components/views/users-list/UsersList";
 import UserDetail from "./components/views/user-detail/UserDetail";
 import ProtectedRoute from "./components/ui/protected-route/ProtectedRoute";
+import BagsList from "./components/views/bag-list/BagsList";
 
 const routes = [
   {
@@ -30,11 +31,11 @@ const routes = [
         element: <Register />,
       },
       {
-        path: "things/",
+        path: "treasures/",
         element: <ThingsList />,
       },
       {
-        path: "things/:id/",
+        path: "treasures/:id/",
         element: <ThingDetail />,
       },
       {
@@ -59,6 +60,14 @@ const routes = [
       },
       {
         path: "users/:id/",
+        element: <ProtectedRoute element={<UserDetail />} />,
+      },
+      {
+        path: "bags/",
+        element: <ProtectedRoute element={<BagsList />} />,
+      },
+      {
+        path: "bags/:id/",
         element: <ProtectedRoute element={<UserDetail />} />,
       },
     ],

@@ -21,7 +21,7 @@ const ThingDetail = () => {
     dispatch(
       setBreadcrumb([
         { label: "Home", url: "/" },
-        { label: "Things", url: "/things/" },
+        { label: "Things", url: "/treasures/" },
         { label: thing?.name || "Thing" },
       ])
     );

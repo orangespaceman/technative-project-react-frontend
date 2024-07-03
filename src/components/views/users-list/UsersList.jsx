@@ -27,7 +27,7 @@ const UsersList = () => {
         {users.map((user) => (
           <li className={styles.item} key={user.id}>
             <NavLink className={styles.link} to={`/users/${user.id}/`}>
-              {user.name}
+              {user.username}
             </NavLink>
           </li>
         ))}

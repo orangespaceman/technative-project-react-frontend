@@ -20,31 +20,31 @@ const UserDetail = () => {
     dispatch(fetchUser(id));
   }, [dispatch, id]);
 
-  useEffect(() => {
-    dispatch(fetchThingsByUser(id));
-  }, [dispatch, id]);
+  // useEffect(() => {
+  //   dispatch(fetchThingsByUser(id));
+  // }, [dispatch, id]);
 
   useEffect(() => {
     dispatch(
       setBreadcrumb([
         { label: "Home", url: "/" },
         { label: "Users", url: "/users/" },
-        { label: user?.name || "User" },
+        { label: user?.username || "User" },
       ])
     );
   }, [dispatch, user]);
 
-  if (userStatus === "loading" || thingsStatus === "loading") {
-    return <div>Loading...</div>;
-  }
+  // if (userStatus === "loading" || thingsStatus === "loading") {
+  //   return <div>Loading...</div>;
+  // }
 
   if (userStatus === "failed") {
     return <div>{userError}</div>;
   }
 
-  if (thingsStatus === "failed") {
-    return <div>{thingsError}</div>;
-  }
+  // if (thingsStatus === "failed") {
+  //   return <div>{thingsError}</div>;
+  // }
 
   if (!user) {
     return <div>User not found</div>;
@@ -53,7 +53,7 @@ const UserDetail = () => {
   return (
     <div className={styles.wrapper}>
       <p>
-        <strong>Name:</strong> <em>{user.name}</em>
+        <strong>Name:</strong> <em>{user.username}</em>
       </p>
       <p>
         <strong>Bio:</strong> <em>{user.bio}</em>
@@ -61,15 +61,15 @@ const UserDetail = () => {
       <p>
         <strong>Things:</strong>
       </p>
-      <ul>
+{/* {     <ul>
         {things.map((thing) => (
           <li key={thing.id}>
             <NavLink className={styles.link} to={`/things/${thing.id}/`}>
-              {thing.name}
+              {thing.treasure_name}
             </NavLink>
           </li>
         ))}
-      </ul>
+      </ul>} */}
     </div>
   );
 };
