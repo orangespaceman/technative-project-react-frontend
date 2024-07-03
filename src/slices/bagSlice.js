@@ -64,7 +64,7 @@ const BagSlice = createSlice({
     name: "bags",
     initialState: {
         items: [],
-        userBag: [],
+        userBags: [],
         currentThing: null,
         status: "idle",
         userBagStatus: "idle",
@@ -80,59 +80,60 @@ const BagSlice = createSlice({
             })
             .addCase(fetchBags.fulfilled, (state, action) => {
                 state.status = "succeeded";
+                // state.items = ["hello i am wrong", "and i suck"];
                 state.items = action.payload;
             })
             .addCase(fetchBags.rejected, (state, action) => {
                 state.status = "failed";
                 state.error = action.error.message;
-            })
-            .addCase(fetchBagByUser.pending, (state) => {
-                state.userBagStatus = "loading";
-            })
-            .addCase(fetchBagByUser.fulfilled, (state, action) => {
-                state.userBagStatus = "succeeded";
-                state.userBag = action.payload;
-            })
-            .addCase(fetchBagByUser.rejected, (state, action) => {
-                state.userBagStatus = "failed";
-                state.userBagError = action.error.message;
-            })
-            .addCase(fetchMyBag.pending, (state) => {
-                state.userBagStatus = "loading";
-            })
-            .addCase(fetchMyBag.fulfilled, (state, action) => {
-                state.userBagStatus = "succeeded";
-                state.userBag = action.payload;
-            })
-            .addCase(fetchMyBag.rejected, (state, action) => {
-                state.userBagStatus = "failed";
-                state.userBagError = action.error.message;
-            })
-            .addCase(fetchThing.pending, (state) => {
-                state.currentBagstatus = "loading";
-            })
-            .addCase(fetchThing.fulfilled, (state, action) => {
-                state.currentBagstatus = "succeeded";
-                state.currentThing = action.payload;
-            })
-            .addCase(fetchThing.rejected, (state, action) => {
-                state.currentBagstatus = "failed";
-                state.currentThingError = action.error.message;
-            })
-            .addCase(addThing.fulfilled, (state, action) => {
-                state.items.push(action.payload);
-            })
-            .addCase(editThing.fulfilled, (state, action) => {
-                const index = state.items.findIndex(
-                    (item) => item.id === action.payload.id
-                );
-                state.items[index] = action.payload;
-            })
-            .addCase(deleteThing.fulfilled, (state, action) => {
-                state.items = state.items.filter(
-                    (item) => item.id !== action.payload
-                );
             });
+        // .addCase(fetchBagByUser.pending, (state) => {
+        //     state.userBagStatus = "loading";
+        // })
+        // .addCase(fetchBagByUser.fulfilled, (state, action) => {
+        //     state.userBagStatus = "succeeded";
+        //     state.userBag = action.payload;
+        // })
+        // .addCase(fetchBagByUser.rejected, (state, action) => {
+        //     state.userBagStatus = "failed";
+        //     state.userBagError = action.error.message;
+        // })
+        // .addCase(fetchMyBag.pending, (state) => {
+        //     state.userBagStatus = "loading";
+        // })
+        // .addCase(fetchMyBag.fulfilled, (state, action) => {
+        //     state.userBagStatus = "succeeded";
+        //     state.userBag = action.payload;
+        // })
+        // .addCase(fetchMyBag.rejected, (state, action) => {
+        //     state.userBagStatus = "failed";
+        //     state.userBagError = action.error.message;
+        // })
+        // .addCase(fetchThing.pending, (state) => {
+        //     state.currentBagstatus = "loading";
+        // })
+        // .addCase(fetchThing.fulfilled, (state, action) => {
+        //     state.currentBagstatus = "succeeded";
+        //     state.currentThing = action.payload;
+        // })
+        // .addCase(fetchThing.rejected, (state, action) => {
+        //     state.currentBagstatus = "failed";
+        //     state.currentThingError = action.error.message;
+        // })
+        // .addCase(addThing.fulfilled, (state, action) => {
+        //     state.items.push(action.payload);
+        // })
+        // .addCase(editThing.fulfilled, (state, action) => {
+        //     const index = state.items.findIndex(
+        //         (item) => item.id === action.payload.id
+        //     );
+        //     state.items[index] = action.payload;
+        // })
+        // .addCase(deleteThing.fulfilled, (state, action) => {
+        //     state.items = state.items.filter(
+        //         (item) => item.id !== action.payload
+        //     );
+        // });
     },
 });
 
