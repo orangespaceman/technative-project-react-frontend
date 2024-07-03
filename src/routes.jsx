@@ -40,6 +40,14 @@ const routes = [
         element: <ThingDetail />,
       },
       {
+        path: "bags/",
+        element: <BagsList />,
+      },
+      {
+        path: "bags/:id/",
+        element: <BagDetail />,
+      },
+      {
         path: "my-things/",
         element: <ProtectedRoute element={<MyThings />} />,
       },
@@ -71,14 +79,6 @@ const routes = [
       {
         path: "users/:id/",
         element: <ProtectedRoute element={<UserDetail />} />,
-      },
-      {
-        path: "bags/",
-        element: <ProtectedRoute element={<BagsList />} />,
-      },
-      {
-        path: "bags/:id/",
-        element: <ProtectedRoute element={<BagDetail />} />,
       },
     ],
   },
