@@ -9,7 +9,7 @@ export const fetchThings = createAsyncThunk("thing/fetchThing", async () => {
 export const fetchThingsByUser = createAsyncThunk(
   "things/fetchThingsByUser",
   async (userId) => {
-    const response = await apiService(`users/${userId}/things`, {
+    const response = await apiService(`users/${userId}/treasures`, {
       method: "GET",
     });
     return response;

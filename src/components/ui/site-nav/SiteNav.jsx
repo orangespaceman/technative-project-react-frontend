@@ -7,7 +7,8 @@ function SiteNav() {
 
   const navLinks = [
     { label: "Home", url: "/" },
-    { label: "Things", url: "/things/" },
+    { label: "Treasures", url: "/treasures/" },
+    { label: "Bags", url: "/bags/" },
   ];
 
   if (isLoggedIn) {
