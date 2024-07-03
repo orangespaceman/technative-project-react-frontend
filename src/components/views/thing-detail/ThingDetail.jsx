@@ -51,8 +51,8 @@ const ThingDetail = () => {
         <p>
           <strong>Owner:</strong>
           <em>
-            <NavLink className={styles.link} to={`/users/${thing.user_id}/`}>
-              {thing.user_name}
+            <NavLink className={styles.link} to={`/users/${thing.id}/`}>
+              {thing.bag_name}
             </NavLink>
           </em>
         </p>

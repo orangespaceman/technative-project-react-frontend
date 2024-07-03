@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setBreadcrumb } from "../../../slices/breadcrumbSlice";
-import { addThing } from "../../../slices/thingsSlice";
+import { addBag } from "../../../slices/bagSlice";
 import { showToast } from "../../../slices/toastSlice";
 import styles from "./add-thing.module.css";
 
@@ -20,7 +20,7 @@ const AddThing = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(addThing({ name, description }));
+    dispatch(addBag({ name, description }));
     dispatch(showToast(`${name} added!`));
     setName("");
     setDescription("");

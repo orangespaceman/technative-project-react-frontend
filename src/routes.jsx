@@ -47,6 +47,15 @@ const routes = [
         element: <ProtectedRoute element={<AddThing />} />,
       },
       {
+        path: "my-bag/",
+        element: <ProtectedRoute element={<MyThings />} />,
+      },
+      {
+        path: "bags/add/",
+        element: <ProtectedRoute element={<AddThing />} />,
+      },
+
+      {
         path: "my-things/:id/edit/",
         element: <ProtectedRoute element={<EditThing />} />,
       },

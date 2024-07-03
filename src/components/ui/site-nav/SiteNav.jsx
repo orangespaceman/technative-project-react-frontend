@@ -8,11 +8,13 @@ function SiteNav() {
   const navLinks = [
     { label: "Home", url: "/" },
     { label: "Treasures", url: "/treasures/" },
-    { label: "Bags", url: "/bags/" },
   ];
 
   if (isLoggedIn) {
-    navLinks.push({ label: "Users", url: "/users/" });
+    navLinks.push(
+      { label: "Users", url: "/users/" },
+      { label: "Bags", url: "/bags/" }
+    );
   }
 
   return (
