@@ -13,6 +13,7 @@ import UserDetail from "./components/views/user-detail/UserDetail";
 import ProtectedRoute from "./components/ui/protected-route/ProtectedRoute";
 import BagsList from "./components/views/bag-list/BagsList";
 import BagDetail from "./components/views/bag-detail/BagDetail";
+import AddTreasure from "./components/views/add-treasure/AddTreasure";
 
 const routes = [
   {
@@ -63,7 +64,10 @@ const routes = [
         path: "bags/add/",
         element: <ProtectedRoute element={<AddThing />} />,
       },
-
+      {
+        path: "treasures/add/",
+        element: <ProtectedRoute element={<AddTreasure />} />,
+      },
       {
         path: "my-things/:id/edit/",
         element: <ProtectedRoute element={<EditThing />} />,
