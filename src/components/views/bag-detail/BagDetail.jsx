@@ -22,7 +22,7 @@ const BagDetail = () => {
       setBreadcrumb([
         { label: "Home", url: "/" },
         { label: "Bags", url: "/bags/" },
-        { label: bag?.name || "Bag" }, //If something ain't working check whether bag_name!!
+        { label: bag?.name || "Bag" },
       ])
     );
   }, [dispatch, bag]);
