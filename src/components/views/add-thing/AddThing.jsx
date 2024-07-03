@@ -14,7 +14,7 @@ const AddThing = () => {
 
   useEffect(() => {
     dispatch(
-      setBreadcrumb([{ label: "Home", url: "/" }, { label: "Add thing" }])
+      setBreadcrumb([{ label: "Home", url: "/" }, { label: "Add bag" }])
     );
   }, [dispatch]);
 
@@ -51,7 +51,7 @@ const AddThing = () => {
           />
         </label>
         <div className={styles.inputContainer}>
-          <button type="submit">Add Thing</button>
+          <button type="submit">Add Bag</button>
         </div>
       </form>
     </div>

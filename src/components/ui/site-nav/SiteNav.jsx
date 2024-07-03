@@ -7,14 +7,12 @@ function SiteNav() {
 
   const navLinks = [
     { label: "Home", url: "/" },
+    { label: "Bags", url: "/bags/" },
     { label: "Treasures", url: "/treasures/" },
   ];
 
   if (isLoggedIn) {
-    navLinks.push(
-      { label: "Users", url: "/users/" },
-      { label: "Bags", url: "/bags/" }
-    );
+    navLinks.push({ label: "Users", url: "/users/" });
   }
 
   return (

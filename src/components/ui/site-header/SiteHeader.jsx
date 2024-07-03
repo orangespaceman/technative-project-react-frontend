@@ -15,7 +15,7 @@ function SiteHeader() {
   if (isLoggedIn) {
     navLinks.push(
       { label: "My things", url: "/my-things/" },
-      { label: "Add thing", url: "/my-things/add/" }
+      { label: "Add bag", url: "/my-things/add/" }
     );
   } else {
     navLinks.push(
