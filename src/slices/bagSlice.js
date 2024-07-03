@@ -7,15 +7,16 @@ export const fetchBags = createAsyncThunk("bags/fetchBags", async () => {
   return response;
 });
 
-// export const fetchBagByUser = createAsyncThunk(
-//     "bags/fetchBagByUser",
-//     async (userId) => {
-//         const response = await apiService(`users/${userId}/bags`, {
-//             method: "GET",
-//         });
-//         return response;
-//     }
-// );
+// Fetching all bags belonging to one user:
+export const fetchBagByUser = createAsyncThunk(
+  "bags/fetchBagByUser",
+  async (userId) => {
+    const response = await apiService("bags/fetchByUser", {
+      method: "GET",
+    });
+    return response;
+  }
+);
 
 // export const fetchMyBag = createAsyncThunk(
 //     "bags/fetchMyBag",
@@ -86,27 +87,27 @@ const BagSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       })
-      // .addCase(fetchBagByUser.pending, (state) => {
-      //     state.userBagStatus = "loading";
-      // })
-      // .addCase(fetchBagByUser.fulfilled, (state, action) => {
-      //     state.userBagStatus = "succeeded";
-      //     state.userBag = action.payload;
-      // })
-      // .addCase(fetchBagByUser.rejected, (state, action) => {
-      //     state.userBagStatus = "failed";
-      //     state.userBagError = action.error.message;
-      // })
+      .addCase(fetchBagByUser.pending, (state) => {
+        state.userBagStatus = "loading";
+      })
+      .addCase(fetchBagByUser.fulfilled, (state, action) => {
+        state.userBagStatus = "succeeded";
+        state.userBags = action.payload;
+      })
+      .addCase(fetchBagByUser.rejected, (state, action) => {
+        state.userBagStatus = "failed";
+        state.userBagError = action.error.message;
+      })
       // .addCase(fetchMyBag.pending, (state) => {
-      //     state.userBagStatus = "loading";
+      //   state.userBagStatus = "loading";
       // })
       // .addCase(fetchMyBag.fulfilled, (state, action) => {
-      //     state.userBagStatus = "succeeded";
-      //     state.userBag = action.payload;
+      //   state.userBagStatus = "succeeded";
+      //   state.userBag = action.payload;
       // })
       // .addCase(fetchMyBag.rejected, (state, action) => {
-      //     state.userBagStatus = "failed";
-      //     state.userBagError = action.error.message;
+      //   state.userBagStatus = "failed";
+      //   state.userBagError = action.error.message;
       // })
       .addCase(fetchBag.pending, (state) => {
         state.currentBagstatus = "loading";
