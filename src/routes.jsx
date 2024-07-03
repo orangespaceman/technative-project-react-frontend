@@ -12,6 +12,7 @@ import UsersList from "./components/views/users-list/UsersList";
 import UserDetail from "./components/views/user-detail/UserDetail";
 import ProtectedRoute from "./components/ui/protected-route/ProtectedRoute";
 import BagsList from "./components/views/bag-list/BagsList";
+import BagDetail from "./components/views/bag-detail/BagDetail";
 
 const routes = [
   {
@@ -77,7 +78,7 @@ const routes = [
       },
       {
         path: "bags/:id/",
-        element: <ProtectedRoute element={<UserDetail />} />,
+        element: <ProtectedRoute element={<BagDetail />} />,
       },
     ],
   },

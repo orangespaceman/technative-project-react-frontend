@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import apiService from "../services/apiService";
 
+//Get all bags
 export const fetchBags = createAsyncThunk("bags/fetchBags", async () => {
   const response = await apiService("bags", { method: "GET" });
   return response;
@@ -26,9 +27,10 @@ export const fetchBags = createAsyncThunk("bags/fetchBags", async () => {
 //     }
 // );
 
-// export const fetchThing = createAsyncThunk("bags/fetchThing", async (id) => {
-//     return await apiService(`treasures/${id}`, { method: "GET" });
-// });
+//Gets one bag
+export const fetchBag = createAsyncThunk("bags/fetchBag", async (id) => {
+  return await apiService(`bags/${id}`, { method: "GET" });
+});
 
 export const addBag = createAsyncThunk("bags/addBag", async (newBag) => {
   const response = await apiService("bags", {
@@ -83,40 +85,40 @@ const BagSlice = createSlice({
       .addCase(fetchBags.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
+      })
+      // .addCase(fetchBagByUser.pending, (state) => {
+      //     state.userBagStatus = "loading";
+      // })
+      // .addCase(fetchBagByUser.fulfilled, (state, action) => {
+      //     state.userBagStatus = "succeeded";
+      //     state.userBag = action.payload;
+      // })
+      // .addCase(fetchBagByUser.rejected, (state, action) => {
+      //     state.userBagStatus = "failed";
+      //     state.userBagError = action.error.message;
+      // })
+      // .addCase(fetchMyBag.pending, (state) => {
+      //     state.userBagStatus = "loading";
+      // })
+      // .addCase(fetchMyBag.fulfilled, (state, action) => {
+      //     state.userBagStatus = "succeeded";
+      //     state.userBag = action.payload;
+      // })
+      // .addCase(fetchMyBag.rejected, (state, action) => {
+      //     state.userBagStatus = "failed";
+      //     state.userBagError = action.error.message;
+      // })
+      .addCase(fetchBag.pending, (state) => {
+        state.currentBagstatus = "loading";
+      })
+      .addCase(fetchBag.fulfilled, (state, action) => {
+        state.currentBagstatus = "succeeded";
+        state.currentThing = action.payload;
+      })
+      .addCase(fetchBag.rejected, (state, action) => {
+        state.currentBagstatus = "failed";
+        state.currentThingError = action.error.message;
       });
-    // .addCase(fetchBagByUser.pending, (state) => {
-    //     state.userBagStatus = "loading";
-    // })
-    // .addCase(fetchBagByUser.fulfilled, (state, action) => {
-    //     state.userBagStatus = "succeeded";
-    //     state.userBag = action.payload;
-    // })
-    // .addCase(fetchBagByUser.rejected, (state, action) => {
-    //     state.userBagStatus = "failed";
-    //     state.userBagError = action.error.message;
-    // })
-    // .addCase(fetchMyBag.pending, (state) => {
-    //     state.userBagStatus = "loading";
-    // })
-    // .addCase(fetchMyBag.fulfilled, (state, action) => {
-    //     state.userBagStatus = "succeeded";
-    //     state.userBag = action.payload;
-    // })
-    // .addCase(fetchMyBag.rejected, (state, action) => {
-    //     state.userBagStatus = "failed";
-    //     state.userBagError = action.error.message;
-    // })
-    // .addCase(fetchThing.pending, (state) => {
-    //     state.currentBagstatus = "loading";
-    // })
-    // .addCase(fetchThing.fulfilled, (state, action) => {
-    //     state.currentBagstatus = "succeeded";
-    //     state.currentThing = action.payload;
-    // })
-    // .addCase(fetchThing.rejected, (state, action) => {
-    //     state.currentBagstatus = "failed";
-    //     state.currentThingError = action.error.message;
-    // })
     // .addCase(addThing.fulfilled, (state, action) => {
     //     state.items.push(action.payload);
     // })
