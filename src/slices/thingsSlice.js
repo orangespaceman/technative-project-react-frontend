@@ -44,9 +44,9 @@ export const addThing = createAsyncThunk(
 export const editThing = createAsyncThunk(
   "things/editThing",
   async ({ id, updatedThing }) => {
-    const response = await apiService(`my-things/${id}`, {
-      method: "PUT",
-      body: JSON.stringify(updatedThing),
+    const response = await apiService(`treasures/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(updatedThing),
     });
     return response;
   }
