@@ -6,8 +6,13 @@ It allows users to register, log in, and manage their collections of things.
 
 The app is built using React and Redux.
 
-
 ## Installation
+
+```sh
+git clone https://github.com/yourusername/show-us-your-contents-frontend.git
+cd show-us-your-contents-frontend
+npm install
+```
 
 ### Prerequisites
 
@@ -40,12 +45,11 @@ npm run dev
 
 The app should now be running on [http://localhost:3000](http://localhost:3000)
 
-
 ## Available scripts
 
 In the project directory, you can run the following scripts:
 
- - `npm run dev`: Start the development server.
- - `npm run build`: Build the app for production.
- - `npm run serve`: Serve the production build of the app.
- - `npm run lint`: Run ESLint to lint the code.
+- `npm run dev`: Start the development server.
+- `npm run build`: Build the app for production.
+- `npm run serve`: Serve the production build of the app.
+- `npm run lint`: Run ESLint to lint the code.
