@@ -1,26 +1,28 @@
 .wrapper {
-  padding: 1rem;
-  border: 1px solid lightgray;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: lightgrey;
+	padding: 1rem;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background: rgb(241, 48, 167);
 }
 
 .links {
-  display: flex;
+	display: flex;
 }
 
 .activeLink,
 .inactiveLink {
-  font-size: 20px;
-  margin-right: 1.5rem;
+	font-size: 20px;
+	margin-right: 1.5rem;
 }
 
 .activeLink {
-  color: #000;
+	color: #fff;
+	font-weight: bolder;
+	text-decoration: none;
 }
 
 .inactiveLink {
-  color: #666;
+	color: #fff;
 }
