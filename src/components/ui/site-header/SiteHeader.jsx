@@ -29,24 +29,26 @@ function SiteHeader() {
 		<div className={styles.wrapper}>
 			<img src="/suyc_logo.png" alt="Logo" className={styles.logo} />
 			<h1 className={styles.title}>Show Us Your Contents</h1>
-			<nav className={styles.links}>
-				{navLinks.map((navLink) => (
-					<NavLink
-						key={navLink.url}
-						to={navLink.url}
-						className={({ isActive }) =>
-							isActive ? styles.activeLink : styles.inactiveLink
-						}
-					>
-						{navLink.label}
-					</NavLink>
-				))}
-				{isLoggedIn && (
-					<button className={styles.logoutbutton} onClick={handleLogout}>
-						Logout
-					</button>
-				)}
-			</nav>
+			<div className={styles.navcontainer}>
+				<nav className={styles.links}>
+					{navLinks.map((navLink) => (
+						<NavLink
+							key={navLink.url}
+							to={navLink.url}
+							className={({ isActive }) =>
+								isActive ? styles.activeLink : styles.inactiveLink
+							}
+						>
+							{navLink.label}
+						</NavLink>
+					))}
+					{isLoggedIn && (
+						<button className={styles.logoutbutton} onClick={handleLogout}>
+							Logout
+						</button>
+					)}
+				</nav>
+			</div>
 		</div>
 	);
 }
