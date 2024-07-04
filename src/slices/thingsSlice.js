@@ -55,7 +55,7 @@ export const editThing = createAsyncThunk(
 export const deleteThing = createAsyncThunk(
   "things/deleteThing",
   async (id) => {
-    await apiService(`my-things/${id}`, { method: "DELETE" });
+    await apiService(`treasures/${id}`, { method: "DELETE" });
     return id;
   }
 );
