@@ -33,7 +33,7 @@ export const fetchThing = createAsyncThunk("things/fetchThing", async (id) => {
 export const addThing = createAsyncThunk(
   "things/addThing",
   async (newThing) => {
-    const response = await apiService("my-things", {
+    const response = await apiService("treasures", {
       method: "POST",
       body: JSON.stringify(newThing),
     });
