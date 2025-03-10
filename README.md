@@ -1,6 +1,6 @@
-# Project 3 - example front-end
+# React Project - example front-end
 
-This is an example front-end application for project 3.
+This is an example front-end application for the React project.
 
 It allows users to register, log in, and manage their collections of things.
 
